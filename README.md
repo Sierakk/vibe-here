@@ -4,7 +4,7 @@
 
 <img src="assets/vibe-icon.png" alt="Vibe Here Icon" width="128" height="128">
 
-**Open Mistral Vibe in Warp or Ghostty in the selected folder — like Open in Warp.**
+**Open Mistral Vibe in Warp, Ghostty or Terminal in the selected folder.**
 
 [![Raycast](https://img.shields.io/badge/Raycast-Extension-orange?style=for-the-badge)](https://www.raycast.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -16,14 +16,14 @@
 
 ## ✨ Features
 
-- **Quick Access**: Open Warp or Ghostty directly in the selected Finder folder with a single command
+- **Quick Access**: Open Warp, Ghostty or Terminal directly in the selected Finder folder with a single command
 - **Automatic Vibe Launch**: The `vibe` CLI starts automatically in the new terminal tab/window
 - **Smart Folder Detection**: Works with:
   - Selected file/folder in Finder
   - Frontmost Finder window
   - Raycast File Search results
-- **Customizable**: Choose your preferred terminal (Warp or Ghostty) and configure the `vibe` binary path
-- **Seamless Integration**: Works just like the built-in "Open in Warp" but with Vibe supercharged AI assistance
+- **Customizable**: Choose your preferred terminal (Warp, Ghostty or Terminal) and configure the `vibe` binary path
+- **Seamless Integration**: Launches your terminal with Vibe supercharged AI assistance
 
 ---
 
@@ -57,6 +57,7 @@
 - One of the supported terminals:
   - [Warp](https://www.warp.dev/) (default)
   - [Ghostty](https://ghostty.sh/)
+  - Terminal (built-in, preinstalled on every macOS)
 
 ### Install Mistral Vibe
 
@@ -83,7 +84,7 @@ After installing the extension, you can configure it in Raycast:
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| **Terminal** | Choose between Warp or Ghostty | `warp` |
+| **Terminal** | Choose between Warp, Ghostty or Terminal | `warp` |
 | **vibe binary** | Path to the vibe CLI executable | `/opt/homebrew/bin/vibe` |
 
 ---
@@ -114,7 +115,7 @@ The selected terminal will open in that folder, with `vibe` ready to go.
 3. Run "Vibe Here" from Raycast
 
 # Result:
-Warp/Ghostty opens with:
+Warp/Ghostty/Terminal opens with:
   cd /path/to/your/project
   vibe
 ```
@@ -126,11 +127,12 @@ Warp/Ghostty opens with:
 Vibe Here uses a combination of Raycast APIs and AppleScript to:
 
 1. **Detect the target folder** from Finder selection, frontmost window, or command argument
-2. **Open your terminal** (Warp or Ghostty) at that location
+2. **Open your terminal** (Warp, Ghostty or Terminal) at that location
 3. **Type and execute** the `vibe` command automatically
 
 For Warp, it uses deep links (`warp://action/new_tab`) and simulates typing.
 For Ghostty, it uses either the CLI or AppleScript to open a new window.
+For Terminal, it uses AppleScript `do script` to open a new window and run the command directly.
 
 ---
 
@@ -152,6 +154,7 @@ This extension bridges the gap between your file browser and AI-powered developm
 - [Raycast](https://www.raycast.com/) — The productivity tool that powers this extension
 - [Warp](https://www.warp.dev/) — Modern terminal emulator for macOS
 - [Ghostty](https://ghostty.sh/) — Fast, modern, GPU-accelerated terminal
+- [Terminal](https://support.apple.com/guide/terminal/welcome/mac) — The built-in macOS terminal
 
 ---
 

@@ -7,7 +7,7 @@ import { promisify } from "util";
 
 const execFileAsync = promisify(execFile);
 
-type Terminal = "warp" | "ghostty";
+type Terminal = "warp" | "ghostty" | "apple";
 
 interface Preferences {
   terminal: Terminal;
@@ -112,6 +112,16 @@ async function openInGhostty(folder: string): Promise<void> {
   ]);
 }
 
+async function openInAppleTerminal(folder: string): Promise<void> {
+  await execFileAsync("osascript", [
+    "-e",
+    `tell application "Terminal"
+       do script "cd " & quoted form of "${quoteAppleScript(folder)}" & " && vibe"
+       activate
+     end tell`,
+  ]);
+}
+
 export default async function Command() {
   const { terminal, vibePath } = getPreferenceValues<Preferences>();
   const vibeBin = expandHome(vibePath || "/opt/homebrew/bin/vibe");
@@ -131,6 +141,8 @@ export default async function Command() {
 
     if (terminal === "ghostty") {
       await openInGhostty(folder);
+    } else if (terminal === "apple") {
+      await openInAppleTerminal(folder);
     } else {
       await openInWarp(folder);
     }
