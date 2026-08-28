@@ -21,7 +21,6 @@
 - **Smart Folder Detection**: Works with:
   - Selected file/folder in Finder
   - Frontmost Finder window
-  - Raycast File Search results
 - **Customizable**: Choose your preferred terminal (Warp, Ghostty or Terminal) and configure the `vibe` binary path
 - **Seamless Integration**: Launches your terminal with Vibe supercharged AI assistance
 
@@ -85,7 +84,7 @@ After installing the extension, you can configure it in Raycast:
 | Option | Description | Default |
 |--------|-------------|---------|
 | **Terminal** | Choose between Warp, Ghostty or Terminal | `warp` |
-| **vibe binary** | Path to the vibe CLI executable | `/opt/homebrew/bin/vibe` |
+| **Vibe Binary** | Path to the vibe CLI executable | `/opt/homebrew/bin/vibe` |
 
 ---
 
@@ -98,13 +97,9 @@ After installing the extension, you can configure it in Raycast:
 3. Search for **"Vibe Here"**
 4. Press Enter
 
+If nothing is selected, the front Finder window is used.
+
 The selected terminal will open in that folder, with `vibe` ready to go.
-
-### Alternative Methods
-
-- **No selection**: If nothing is selected, Vibe Here will use the frontmost Finder window's directory
-- **From File Search**: Use Raycast's File Search, select a file/folder, then run "Vibe Here"
-- **With argument**: You can also pass a path directly as an argument
 
 ### Example Workflow
 
@@ -126,7 +121,7 @@ Warp/Ghostty/Terminal opens with:
 
 Vibe Here uses a combination of Raycast APIs and AppleScript to:
 
-1. **Detect the target folder** from Finder selection, frontmost window, or command argument
+1. **Detect the target folder** from Finder selection or frontmost window
 2. **Open your terminal** (Warp, Ghostty or Terminal) at that location
 3. **Type and execute** the `vibe` command automatically
 

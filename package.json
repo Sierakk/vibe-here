@@ -34,7 +34,7 @@
       "name": "vibePath",
       "type": "textfield",
       "required": false,
-      "title": "vibe binary",
+      "title": "Vibe Binary",
       "description": "Path to the vibe CLI (Homebrew default is fine)",
       "default": "/opt/homebrew/bin/vibe",
       "placeholder": "/opt/homebrew/bin/vibe"
