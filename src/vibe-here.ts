@@ -1,4 +1,12 @@
-import { closeMainWindow, getPreferenceValues, getSelectedFinderItems, open, showHUD, showToast, Toast } from "@raycast/api";
+import {
+  closeMainWindow,
+  getPreferenceValues,
+  getSelectedFinderItems,
+  open,
+  showHUD,
+  showToast,
+  Toast,
+} from "@raycast/api";
 import { execFile } from "child_process";
 import { existsSync, statSync } from "fs";
 import { homedir } from "os";
